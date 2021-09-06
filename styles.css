@@ -1,0 +1,151 @@
+/* Main Styling */
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   --main-shade: rgba(89, 125, 138, 0.95);
+   --alt-shade: rgb(0, 238, 255);
+   --alt-shade-2: rgb(7, 186, 199);
+ }
+ 
+ html, body, #app {
+   background: url('/assets/images/raindrops-background.jpg') repeat center center/cover;
+   font-family: 'Permanent Marker', cursive;
+   text-align: center;
+   height: 100%;
+ }
+ 
+ body {
+   display: grid;
+   grid-template-rows: 1fr 3fr 5fr;
+   grid-template-columns: 1.5fr 3fr 1fr;
+   grid-template-areas:
+     " header header header"
+     " visitor app app"
+     " . app app";
+ }
+ 
+ #app {
+   grid-area: app;
+ }
+ 
+ #visitor {
+   background-color: var(--main-shade);
+   display: flex;
+   grid-area: visitor;
+   flex-direction: column;
+   border: 3px solid #444;
+   border-radius: 7px;
+   margin-left: 10px;
+   padding: 10px;
+   text-align: left;
+ }
+ 
+ #visitor textarea,
+ #visitor input {
+   border-radius: 5px;
+   font-family: 'Permanent Marker', cursive;
+   text-align: center;
+ }
+ 
+ #visitor-name {
+   width: 100%;
+ }
+ 
+ header {
+   grid-area: header;
+ }
+ 
+ #feed {
+   grid-area: feed;
+ }
+ 
+ h1 {
+   font-size: 5rem;
+ }
+ 
+ h2 {
+   text-align: center;
+   margin-bottom: 12px;
+ }
+ 
+ time,
+ span {
+   font-size: .75rem;
+ }
+ 
+ .tweet {
+   background-color: var(--main-shade);
+   display: flex;
+   flex-direction: column;
+   border: 3px solid #444;
+   border-radius: 7px;
+   max-width: 40vw;
+   margin: 10px 6%;
+   padding: 5px 5px;
+   opacity: 1;
+ }
+ 
+ .profile {
+   display: flex;
+   justify-content: flex-start;
+   align-items: baseline;
+ }
+ 
+ .profile-photo {
+   max-width: 70px;
+   height: 70px;
+   border-radius: 40%;
+   margin: 2px 5px;
+ }
+ 
+ .timestamp {
+   display: block;
+ }
+ 
+ .username {
+   display: block;
+ }
+ 
+ .username:hover {
+   color: var(--alt-shade);
+   cursor: pointer;
+ }
+ 
+ .message {
+   font-size: 1.25rem;
+   margin: 10px 5px;
+ }
+ 
+ /* Buttons */
+ 
+ button {
+   background-color: var(--alt-shade);
+   padding: 5px;
+   border-radius: 3px;
+   margin-bottom: 10px;
+   font-family: 'Permanent Marker', cursive;
+ }
+ 
+ button:hover {
+   background-color: var(--alt-shade-2);
+   color: #fff;
+   cursor: pointer;
+ }
+ 
+ #add-tweet {
+   margin: 20px 30px;
+ }
+ 
+ /* Icons */
+ 
+ i {
+   display: inline-block;
+   margin: 0 5px;
+ }
+ 
+ i:hover {
+   color: var(--alt-shade);
+   cursor: pointer;
+ }
+ 

@@ -9,7 +9,7 @@ streams.users.douglascalhoun = [];
 window.users = Object.keys(streams.users);
 
 // utility function for adding tweets to our data structures
-const addTweet = function(newTweet) {
+const addTweet = newTweet => {
   const username = newTweet.user;
   streams.users[username].push(newTweet);
   streams.home.push(newTweet);
@@ -28,12 +28,12 @@ const objects = ['my', 'your', 'the', 'a', 'my', 'an entire', 'this', 'that', 't
 const nouns = ['cat', 'koolaid', 'system', 'city', 'worm', 'cloud', 'potato', 'money', 'way of life', 'belief system', 'security system', 'bad decision', 'future', 'life', 'pony', 'mind'];
 const tags = ['#techlife', '#burningman', '#sf', 'but only i know how', 'for real', '#sxsw', '#ballin', '#omg', '#yolo', '#magic', '', '', '', ''];
 
-const randomMessage = function() {
+const randomMessage = () => {
   return [randomElement(opening), randomElement(verbs), randomElement(objects), randomElement(nouns), randomElement(tags)].join(' ');
 };
 
 // generate random tweets on a random schedule
-const generateRandomTweet = function() {
+const generateRandomTweet = () => {
   const tweet = {};
   tweet.user = randomElement(users);
   tweet.message = randomMessage();
@@ -52,8 +52,7 @@ const scheduleNextTweet = () => {
 };
 scheduleNextTweet();
 
-// utility function for letting students add "write a tweet" functionality
-// (note: not used by the rest of this file.)
+// utility function for letting visitors add a tweet
 const writeTweet = message => {
   if (!visitor) {
     throw new Error('set the global visitor property!');
@@ -66,6 +65,6 @@ const writeTweet = message => {
   tweet.user = visitor;
   tweet.message = message;
   tweet.created_at = new Date();
-  tweet.profilePhotoURL = './assets/img/visitor.png';
+  tweet.photoURL = './assets/img/incognito.jpeg';
   addTweet(tweet);
 };

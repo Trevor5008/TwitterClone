@@ -24,7 +24,7 @@ $(document).ready(() => {
        let tweet = stream[index],
        date = tweet.created_at,
        photoUrl = users.includes(tweet.user) ? `./assets/images/${tweet.user}.jpeg`
-         : `./assets/img/visitor.jpeg`;
+         : `./assets/images/incognito.jpeg`;
  
        let tweetHtml = `<div class="tweet">
          <div class="profile">
@@ -51,7 +51,7 @@ $(document).ready(() => {
  
      const handleUsernameClick = e => {
        $('#feed').empty();
-       let user = e.target.innerText.slice(1);
+       let user = e.target.innerText;
        renderFeed(user);
        $button.text('Back');
        $button.on('click', function () {

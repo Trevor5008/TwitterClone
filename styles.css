@@ -9,7 +9,7 @@
  }
  
  html, body, #app {
-   background: url('/assets/images/raindrops-background.jpg') repeat center center/cover;
+   background: url('./assets/images/raindrops-background.jpg') repeat center center/cover;
    font-family: 'Permanent Marker', cursive;
    text-align: center;
    height: 100%;

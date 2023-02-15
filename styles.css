@@ -38,18 +38,19 @@
    border-radius: 7px;
    margin-left: 25px;
    padding: 20px;
-   text-align: left;
+   padding: 2rem;
  }
  
  #visitor textarea,
  #visitor input {
    border-radius: 5px;
    font-family: 'Permanent Marker', cursive;
-   text-align: center;
+   padding: .5rem 2rem;
  }
  
  #visitor-name {
    width: 100%;
+   padding: .1rem .25rem;
  }
  
  header {

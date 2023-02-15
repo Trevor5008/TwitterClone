@@ -10,10 +10,12 @@ $(document).ready(() => {
      e.preventDefault();
      $('#feed').empty();
      visitor = $('#visitor-name').val();
-     const message = $('#visitor-message').val();
+     let message = $('#visitor-message').val();
  
      writeTweet(message);
      renderFeed();
+     $('#visitor-name').val('');
+     $('#visitor-message').val('')
    });
  
    const renderFeed = user => {
@@ -23,8 +25,9 @@ $(document).ready(() => {
      while (index >= 0) {
        let tweet = stream[index],
        date = tweet.created_at,
-       photoUrl = users.includes(tweet.user) ? `./assets/images/${tweet.user}.jpeg`
-         : `./assets/images/incognito.jpeg`;
+       photoUrl = users.includes(tweet.user) 
+         ? `./assets/images/${tweet.user}.jpeg`
+         : `./assets/images/ski_mask.jpeg`;
  
        let tweetHtml = `<div class="tweet">
          <div class="profile">

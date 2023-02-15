@@ -65,6 +65,6 @@ const writeTweet = message => {
   tweet.user = visitor;
   tweet.message = message;
   tweet.created_at = new Date();
-  tweet.photoURL = './assets/img/incognito.jpeg';
+  tweet.photoURL = './assets/img/ski_mask.jpeg';
   addTweet(tweet);
 };
